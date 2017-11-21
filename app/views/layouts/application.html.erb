@@ -19,13 +19,13 @@
        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
            <li class="nav-item">
-             <%= link_to 'See All Courses', courses_path %>
+             <%= link_to 'See All Courses', courses_path, class: 'nav-link' %>
            </li>
          </ul>
          <ul class = "navbar-nav">
            <% if user_signed_in? %>
            <li class = "nav-item">
-             <%= link_to 'My Dashboard', dashboard_path %>
+             <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
            </li>
            <li class = "nav-item">
              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -55,9 +55,40 @@
 
     <div id = "footer">
       <div class = "container">
-        <b>Teachers</b>
-        <br/>
-        <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <div class = "row">
+          <div class = "col-12 col-sm-3">
+            <b>Teachers</b>
+            <br/>
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+            <br/>
+            <%= link_to 'My Dashboard', dashboard_path %>
+          </div>
+          <div class = "col-12 col-sm-3">
+            <b>About</b>
+            <br/>
+            <%= link_to 'Team', team_path %>
+            <br/>
+            <%= link_to 'Careers', career_path %>
+            <br/>
+            <%= link_to 'Privacy Policy', privacy_path %>
+          </div>
+          <div class = "col-12 col-sm-3">
+            <b>Contact</b>
+            <br/>
+            doejanene@gmail.com
+            <br/>
+            123 Madeup Blvd.
+            <br/>
+            Madison, WI 53705
+          </div>
+          <div class = "col-12 col-sm-3 social">
+            <b>Social</b>
+            <br/>
+            <br/>
+            <%= link_to 'https://github.com/candgoods' do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+          </div>
       </div>
     </div>
     <script src="http://vjs.zencdn.net/6.2.8/video.js"></script>
